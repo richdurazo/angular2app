@@ -8,7 +8,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var appRoutes = require('./routes/app');
-
+var messageRoutes = require('./routes/message')
 var app = express();
 mongoose.connect('localhost:27017/node-angular');
 
@@ -30,8 +30,10 @@ app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Methods', 'POST, GET, PATCH, DELETE, OPTIONS');
     next();
 });
-
+// order matters here. 
+app.use('/message', messageRoutes);
 app.use('/', appRoutes);
+
 
 // catch 404 and forward to error handler
 // if we try to access a route that is not defined in routes/app.js --> 404 errors. normally you would show error page. 

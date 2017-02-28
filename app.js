@@ -8,7 +8,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var appRoutes = require('./routes/app');
-var messageRoutes = require('./routes/message')
+var messageRoutes = require('./routes/message');
+var userRoutes = require('./routes/user')
+
 var app = express();
 mongoose.connect('localhost:27017/node-angular');
 
@@ -32,6 +34,7 @@ app.use(function (req, res, next) {
 });
 // order matters here. 
 app.use('/message', messageRoutes);
+app.use('/user', userRoutes);
 app.use('/', appRoutes);
 
 

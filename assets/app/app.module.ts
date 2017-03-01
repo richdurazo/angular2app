@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+import { NgSemanticModule } from 'ng-semantic';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpModule } from "@angular/http";
@@ -16,6 +18,7 @@ import { LogoutComponent } from "./auth/logout.component";
 import { SignupComponent } from "./auth/signup.component";
 import { SigninComponent } from "./auth/signin.component";
 import { AuthService } from "./auth/auth.service";
+import { ProfileComponent } from "./profile/profile.component"
 
 
 
@@ -30,14 +33,16 @@ import { AuthService } from "./auth/auth.service";
         HeaderComponent,
         LogoutComponent,
         SignupComponent,
-        SigninComponent
+        SigninComponent,
+        ProfileComponent
     ],
     imports: [
         BrowserModule, 
         FormsModule, 
         routing, 
         ReactiveFormsModule,
-        HttpModule
+        HttpModule,
+        NgSemanticModule
         ],
     providers: [AuthService],
     bootstrap: [AppComponent]

@@ -4,35 +4,16 @@ import { SemanticMenuComponent } from 'ng-semantic'
 @Component({
     selector: 'app-header',
     template: `
-<div class="ui inverted segment">
-  <div class="ui inverted secondary pointing menu">
-    <a class="active item">
-      Home
-    </a>
-    <a class="item">
-      Messages
-    </a>
-    <a class="item">
-      Friends
-    </a>
+  <div class="ui teal inverted menu">
+  <a class="item">
+    <img src="https://ng-semantic.herokuapp.com/demo/assets/images/semantic.png">
+  </a>
+    <a class="item" routerLinkActive="active" [routerLink]="['/messages']">Messenger</a>
+    <a class="item" routerLinkActive="active" [routerLink]="['/profile']">Profile</a>
+
+        <a class="item" routerLinkActive="active" [routerLink]="['/auth']">Sign-In</a>
+
   </div>
-</div>
-
-    <sm-menu title="Angular2" class="inverted teal" logo="https://ng-semantic.herokuapp.com/demo/assets/images/semantic.png">
-        <a sm-item *ngFor="let item of items" [icon]="item.icon">{{item?.title}}</a>
-
-            <nav class="col-md-8 col-md-offset-2">
-                <ul class="nav">
-                    <li routerLinkActive="active"><a [routerLink]="['/messages']">Messenger</a></li>
-                    <li routerLinkActive="active"><a [routerLink]="['/auth']">Authentication</a></li>
-                </ul>
-            </nav>
-    <sm-menu class="menu right secondary">
-        <a sm-item href="#/elements/menu" 
-            image="http://semantic-ui.com/images/avatar/small/stevie.jpg">Elliot Fu</a>
-        <a sm-item icon="sidebar big"></a>
-    </sm-menu>
-    </sm-menu>
     `
 })
 

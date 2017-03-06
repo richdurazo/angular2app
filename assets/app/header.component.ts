@@ -4,6 +4,20 @@ import { SemanticMenuComponent } from 'ng-semantic'
 @Component({
     selector: 'app-header',
     template: `
+<div class="ui inverted segment">
+  <div class="ui inverted secondary pointing menu">
+    <a class="active item">
+      Home
+    </a>
+    <a class="item">
+      Messages
+    </a>
+    <a class="item">
+      Friends
+    </a>
+  </div>
+</div>
+
     <sm-menu title="Angular2" class="inverted teal" logo="https://ng-semantic.herokuapp.com/demo/assets/images/semantic.png">
         <a sm-item *ngFor="let item of items" [icon]="item.icon">{{item?.title}}</a>
 

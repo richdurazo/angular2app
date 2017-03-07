@@ -19,6 +19,8 @@ import { SignupComponent } from "./auth/signup.component";
 import { SigninComponent } from "./auth/signin.component";
 import { AuthService } from "./auth/auth.service";
 import { ProfileComponent } from "./profile/profile.component"
+import { ErrorComponent } from "./errors/error.component"
+import { ErrorService } from "./errors/error.service"
 
 
 
@@ -34,7 +36,8 @@ import { ProfileComponent } from "./profile/profile.component"
         LogoutComponent,
         SignupComponent,
         SigninComponent,
-        ProfileComponent
+        ProfileComponent,
+        ErrorComponent
     ],
     imports: [
         BrowserModule, 
@@ -44,7 +47,7 @@ import { ProfileComponent } from "./profile/profile.component"
         HttpModule,
         NgSemanticModule
         ],
-    providers: [AuthService],
+    providers: [AuthService, ErrorService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
